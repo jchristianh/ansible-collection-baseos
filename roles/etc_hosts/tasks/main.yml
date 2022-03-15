@@ -6,7 +6,7 @@
     - ansible_virtualization_type == "docker"
 
 
-- name: deploy {{ __etc_hosts_file }}
+- name: Deploy {{ __etc_hosts_file }}
   template:
     src: templates/etc_hosts.j2
     dest: "{{ __etc_hosts_file }}"

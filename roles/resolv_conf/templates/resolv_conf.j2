@@ -1,0 +1,16 @@
+###############################################
+# {{ __template_header }}
+###############################################
+#
+# Configuration    : {{ __resolv_conf_file }}
+# Template Version : {{ __resolv_conf_version}}-{{ __resolv_conf_revision }}
+#
+# {{ __project_author }} ({{ __project_email }})
+###############################################
+
+
+search {{ __search_domain }}
+{% for item in __nameservers %}
+nameserver {{ item }}
+{% endfor %}
+
