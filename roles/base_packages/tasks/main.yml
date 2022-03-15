@@ -1,0 +1,20 @@
+---
+- name: Include distribution specific variables or include sane defaults
+  block:
+    - name: Include distribution specific variables
+      include_vars:
+        file: "{{ ansible_distribution | lower }}_{{ ansible_distribution_major_version }}.yml"
+
+  rescue:
+    - name: Distribution not supported; including sane defaults...
+      include_vars:
+        file: __default_packages.yml
+
+
+- name: "Install base packages for host"
+  package:
+    name  : "{{ __base_packages }}"
+    state : present
+
+
+...

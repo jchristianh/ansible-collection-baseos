@@ -1,0 +1,29 @@
+---
+# These defaults will cover CentOS 7, 8, 9, and Debian 10 and 11
+# ...of which we already have vars files for. Although intended,
+# they may not actually match an unsupported distribution.
+
+__base_packages:
+  - bc
+  - bzip2
+  - file
+  - ftp
+  - git
+  - htop
+  - iptraf
+  - mlocate
+  - lsof
+  - rsync
+  - screen
+  - sudo
+  - tar
+  - tcpdump
+  - telnet
+  - traceroute
+  - tree
+  - unzip
+  - vnstat
+  - wget
+  - whois
+  - zip
+

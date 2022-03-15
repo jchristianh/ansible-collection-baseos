@@ -1,3 +1,4 @@
 roles/*
 !roles/.keep
 !roles/etc_hosts
+!roles/base_packages

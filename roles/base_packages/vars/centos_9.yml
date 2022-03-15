@@ -1,0 +1,39 @@
+---
+__base_packages:
+  - bc
+  - bind-utils
+  - bzip2
+  - chrony
+  - cronie
+  - file
+  - ftp
+  - git
+  - htop
+  - ipa-client
+  - iperf3
+  - iptraf
+  - lsof
+  - man
+  - mlocate
+  - net-snmp
+  - net-tools
+  - nfs-utils
+  - rsync
+  - rsyslog
+  - screen
+  - sudo
+  - tar
+  - tcpdump
+  - telnet
+  - traceroute
+  - tree
+  - unzip
+  - vim-enhanced
+  - vnstat
+  - wget
+  - whois
+  - yum-utils
+  - zip
+
+
+...

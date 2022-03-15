@@ -1,0 +1,36 @@
+---
+__base_packages:
+  - bc
+  - bind9utils
+  - bzip2
+  - cron
+  - file
+  - ftp
+  - git
+  - htop
+  - iperf
+  - iptraf
+  - lsof
+  - man-db
+  - mlocate
+  - nfs-common
+  - ntp
+  - procps
+  - rsync
+  - screen
+  - snmpd
+  - sudo
+  - tar
+  - tcpdump
+  - telnet
+  - traceroute
+  - tree
+  - unzip
+  - vim
+  - vnstat
+  - wget
+  - whois
+  - zip
+
+
+...
