@@ -1,3 +1,10 @@
-# Ansible Collection - jchristianh.baseos
+# Ansible Collection - Baseos
 
-Documentation for the collection.
+--------
+
+Provisions environment to a known state.
+
+
+## Authors
+> Chris Hammer (chris@thezengarden.net)
+
