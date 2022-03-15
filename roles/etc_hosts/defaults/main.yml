@@ -1,0 +1,13 @@
+---
+__project_author : Chris Hammer
+__project_email  : chris@thezengarden.net
+__project_repo   : https://github.com/jchristianh-ansible-collections/baseos
+
+
+__template_header : The Zen Garden
+
+
+__etc_hosts_file        : /etc/hosts
+__etc_hosts_file_docker : /etc/hosts.docker
+__etc_hosts_version     : 1.0.0
+__etc_hosts_revision    : 22314

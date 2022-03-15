@@ -1,0 +1,16 @@
+---
+- name: Set etc_hosts_file if running in Docker
+  set_fact:
+    etc_hosts_file: "{{ __etc_hosts_file_docker }}"
+  when:
+    - ansible_virtualization_type == "docker"
+
+
+- name: deploy {{ __etc_hosts_file }}
+  template:
+    src: templates/etc_hosts.j2
+    dest: "{{ __etc_hosts_file }}"
+    mode: 0644
+
+
+...

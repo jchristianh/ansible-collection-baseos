@@ -1,0 +1,28 @@
+# {{ __template_header }}
+###############################################
+#
+# Configuration    : {{ __etc_hosts_file }}
+# Template Version : {{ __etc_hosts_version}}-{{ __etc_hosts_revision }}
+#
+# {{ __project_author }} ({{ __project_email }})
+###############################################
+
+
+# LOCAL INFO
+#############################################
+127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1       localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+
+# OUR PERSONAL INFO
+#############################################
+{{ ansible_default_ipv4.address | default('127.0.0.1') }}    {{ ansible_fqdn }}        {{ ansible_hostname }}     {{ inventory_hostname }}
+
+
+{% if custom_hosts is defined and custom_hosts != '' %}
+# CUSTOM HOSTS:
+#############################################
+{% for item in custom_hosts %}
+{{ item }}
+{% endfor %}
+{% endif %}

@@ -1,2 +1,3 @@
 roles/*
 !roles/.keep
+!roles/etc_hosts
