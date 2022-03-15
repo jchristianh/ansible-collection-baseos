@@ -3,3 +3,4 @@ roles/*
 !roles/etc_hosts
 !roles/base_packages
 !roles/resolv_conf
+!roles/update_all_packages
