@@ -4,3 +4,4 @@ roles/*
 !roles/base_packages
 !roles/resolv_conf
 !roles/update_all_packages
+!roles/motd
