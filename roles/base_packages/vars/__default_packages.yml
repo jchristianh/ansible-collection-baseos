@@ -1,7 +1,9 @@
 ---
-# These defaults will cover CentOS 7, 8, 9, and Debian 10 and 11
-# ...of which we already have vars files for. Although intended,
-# they may not actually match an unsupported distribution.
+# These defaults are intended to cover RHEL/Debian based systems
+# ...although may not be tested on your exact distribution.
+#
+# Please adjust accordingly, or include a vars file matching the pattern:
+# <ansible_distribution>_<ansible_distribution_major_version>.yml
 
 __base_packages:
   - bc
