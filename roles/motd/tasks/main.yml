@@ -16,3 +16,6 @@
     dest: "{{ __motd_file }}"
     mode: 0644
   changed_when: false
+
+
+...
