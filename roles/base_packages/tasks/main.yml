@@ -6,7 +6,7 @@
         file: "{{ ansible_distribution | lower }}_{{ ansible_distribution_major_version }}.yml"
 
   rescue:
-    - name: Non-supported distribution; including default package set
+    - name: Non-supported distribution; using default package set
       include_vars:
         file: __default_packages.yml
 
