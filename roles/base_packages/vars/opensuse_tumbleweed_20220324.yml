@@ -1,0 +1,22 @@
+---
+__base_packages:
+  - bc
+  - bzip2
+  - file
+  - ftp
+  - git
+  - iptraf
+  - mlocate
+  - lsof
+  - rsync
+  - sudo
+  - tar
+  - tcpdump
+  - telnet
+  - traceroute
+  - tree
+  - unzip
+  - wget
+  - whois
+  - zip
+

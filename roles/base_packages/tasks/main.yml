@@ -3,7 +3,7 @@
   block:
     - name: Include distribution specific variables
       include_vars:
-        file: "{{ ansible_distribution | lower }}_{{ ansible_distribution_major_version }}.yml"
+        file: "{{ ansible_distribution | regex_replace('\\s+', '_') | lower }}_{{ ansible_distribution_major_version }}.yml"
 
   rescue:
     - name: Non-supported distribution; using default package set
