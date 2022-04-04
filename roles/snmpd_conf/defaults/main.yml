@@ -1,0 +1,23 @@
+---
+__project_author : Chris Hammer
+__project_email  : chris@thezengarden.net
+__project_repo   : https://github.com/jchristianh-ansible-collections/baseos
+
+
+__template_header : The Zen Garden
+
+
+__snmpd_conf_file        : /etc/snmp/snmpd.conf
+__snmpd_conf_version     : 1.0.0
+__snmpd_conf_revision    : 22404
+
+
+__snmp_pkg : net-snmp
+
+
+__snmpd_location      : 'Newport News, VA'
+__snmpd_contact_name  : 'Chris Hammer'
+__snmpd_contact_email : '<chris@thezengarden.net>'
+
+
+...

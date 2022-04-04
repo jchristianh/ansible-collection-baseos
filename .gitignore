@@ -5,3 +5,4 @@ roles/*
 !roles/resolv_conf
 !roles/update_all_packages
 !roles/motd
+!roles/snmpd_conf
