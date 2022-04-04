@@ -1,0 +1,41 @@
+---
+- name: Include distribution specific variables or include defaults
+  block:
+    - name: Include distribution specific variables
+      include_vars:
+        file: "{{ ansible_distribution | lower }}_{{ ansible_distribution_major_version }}.yml"
+
+
+  rescue:
+    - name: Non-supported distribution; using default package set
+      include_vars:
+        file: __defaults.yml
+
+
+- name: Deploy and configure SNMP
+  block:
+    - name: Install SNMP
+      package:
+        name: "{{ __snmp_pkg }}"
+        state: present
+
+    - name: Ensure /etc/snmp directory is present
+      file:
+        path: /etc/snmp
+        state: directory
+
+    - name: Deploy snmpd.conf
+      template:
+        src: templates/snmpd_conf.j2
+        dest: "{{ __snmpd_conf_file }}"
+        mode: 0644
+      notify: restart snmpd
+
+
+  rescue:
+    - name: Unable to deploy SNMP
+      debug:
+        msg: "Unable to deploy SNMP to {{ inventory_hostname }}."
+
+
+...
