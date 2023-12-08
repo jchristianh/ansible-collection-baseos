@@ -1,0 +1,4 @@
+export PS1='\[\033[38;5;081m\]\u\[\033[38;5;245m\]@\[\033[38;5;206m\]\H \[\033[38;5;245m\]\w\[\033[38;5;206m\]$ \[\e[0m\]'
+
+alias ansible-playbook="time /usr/bin/ansible-playbook"
+alias tm="clear;tail -F /var/log/messages"

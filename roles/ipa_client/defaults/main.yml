@@ -1,0 +1,7 @@
+---
+do_ipa_registration : True
+
+
+ipa_domain      : thezengarden.net
+ipa_auth_server : ipa.thezengarden.net
+ipa_otp         : Bap2e5adcWoHZtEPE

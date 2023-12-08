@@ -1,0 +1,14 @@
+---
+- name: Check for existing IPA registration
+  lineinfile:
+    path: /etc/krb5.conf
+    regexp: "{{ ipa_auth_server }}"
+    state: absent
+  changed_when: false
+  register: ipa_registered_check
+
+
+- name: Register system against IPA server
+  command: ipa-client-install --server {{ ipa_auth_server }}\
+          --domain {{ ipa_domain }} --mkhomedir -w {{ ipa_otp }} --unattended
+  when: not ipa_registered_check.found
