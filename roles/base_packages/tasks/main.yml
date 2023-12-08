@@ -3,12 +3,21 @@
   block:
     - name: Include distribution specific variables
       include_vars:
-        file: "{{ ansible_distribution | regex_replace('\\s+', '_') | lower }}_{{ ansible_distribution_major_version }}.yml"
+        file: "{{ ansible_distribution | lower }}_{{ ansible_distribution_major_version }}.yml"
+
 
   rescue:
     - name: Non-supported distribution; using default package set
       include_vars:
         file: __default_packages.yml
+
+
+- name: Install EPEL for CentOS hosts - Required for some of our packages
+  package:
+    name  : epel-release
+    state : present
+  when:
+    - ansible_distribution | lower == 'centos'
 
 
 - name: Install package set

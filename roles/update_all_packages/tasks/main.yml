@@ -1,5 +1,26 @@
 ---
-- name: Update all packages on host
+- name: Update package cache for Debian hosts
+  apt:
+    update_cache: yes
+  when:
+    - ansible_distribution|lower == 'debian'
+  tags:
+    - skip_ansible_lint
+
+
+- name: Update package cache for RHEL/CentOS/Fedora hosts
+  dnf:
+    update_cache: yes
+  when:
+    - (ansible_distribution|lower == 'centos' or
+      ansible_distribution|lower == 'fedora' or
+      ansible_distribution|lower == 'redhat')
+    - ansible_distribution_major_version|int >= 8
+  tags:
+    - skip_ansible_lint
+
+
+- name: Update all host packages
   package: name=* state=latest
   tags:
     - skip_ansible_lint

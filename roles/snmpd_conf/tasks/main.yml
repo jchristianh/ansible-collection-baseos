@@ -9,7 +9,7 @@
   rescue:
     - name: Non-supported distribution; using default package set
       include_vars:
-        file: __defaults.yml
+        file: __default_packages.yml
 
 
 - name: Deploy and configure SNMP

@@ -10,7 +10,6 @@ __base_packages:
   - ftp
   - git
   - htop
-  - ipa-client
   - iperf3
   - iptraf
   - lsof

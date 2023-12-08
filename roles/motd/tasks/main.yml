@@ -1,21 +1,29 @@
 ---
 - name: Set host IP address or set a default
   set_fact:
-    host_ip: "{{ ansible_default_ipv4.address | default('127.0.0.1') }}"
+    host_ip : "{{ ansible_default_ipv4.address | default('127.0.0.1') }}"
 
 
-- name: Get system uptime - Script
-  script: "scripts/get_uptime.pl {{ ansible_uptime_seconds }}"
-  register: node_uptime
-  changed_when: false
+- name: Install Perl if needed
+  package:
+    name  : perl
+    state : present
+
+
+- name: Get system uptime from script
+  script:
+    cmd        : "scripts/get_uptime.pl {{ ansible_uptime_seconds }}"
+  register     : node_uptime
+  changed_when : false
 
 
 - name: Update MOTD
   template:
-    src: templates/motd.j2
-    dest: "{{ __motd_file }}"
-    mode: 0644
-  changed_when: false
+    src        : templates/motd.j2
+    dest       : "{{ __motd_file }}"
+    mode       : 0644
+  changed_when : false
 
 
 ...
+

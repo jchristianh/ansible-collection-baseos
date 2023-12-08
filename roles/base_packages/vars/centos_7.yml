@@ -9,7 +9,6 @@ __base_packages:
   - ftp
   - git
   - htop
-  - ipa-client
   - iperf
   - iptraf
   - jwhois

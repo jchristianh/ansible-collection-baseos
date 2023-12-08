@@ -9,14 +9,14 @@ __template_header : The Zen Garden
 
 __resolv_conf_file        : /etc/resolv.conf
 __resolv_conf_file_docker : /etc/resolv.conf.docker
-__resolv_conf_version     : 1.0.0
-__resolv_conf_revision    : 22315
+__resolv_conf_version     : 1.0.1
+__resolv_conf_revision    : 221007
 
 
 __search_domain : thezengarden.net
 __nameservers   :
   - 10.10.10.55
-  - 10.1.1.210
+  - 10.1.1.15
 
 
 ...
