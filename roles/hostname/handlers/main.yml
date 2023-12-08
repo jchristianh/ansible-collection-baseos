@@ -4,7 +4,6 @@
     name  : rsyslog
     state : restarted
 
-
 - name: restart_syslog_centos_8
   service:
     name  : syslog
@@ -15,29 +14,30 @@
     name  : rsyslog
     state : restarted
 
-
 - name: restart_syslog_redhat_8
   service:
     name  : rsyslog
     state : restarted
-
 
 - name: restart_syslog_redhat_9
   service:
     name  : rsyslog
     state : restarted
 
-
 - name: restart_syslog_debian_11
   service:
     name  : rsyslog
     state : restarted
 
-
 - name: restart_syslog_fedora_35
   service:
     name  : rsyslog
     state : restarted
+
+- name: restart_syslog_fedora_38
+  service:
+    name  : rsyslog
+    state : started
 
 
 ...

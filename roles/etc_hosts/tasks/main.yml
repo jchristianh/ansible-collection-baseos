@@ -1,7 +1,7 @@
 ---
 - name: Set etc_hosts_file if running in Docker
   set_fact:
-    etc_hosts_file: "{{ __etc_hosts_file_docker }}"
+    etc_hosts_file: "{{ __etc_hosts_file }}.docker"
   when:
     - ansible_virtualization_type == "docker"
 

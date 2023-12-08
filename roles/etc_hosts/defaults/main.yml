@@ -8,7 +8,6 @@ __template_header : The Zen Garden
 
 
 __etc_hosts_file        : /etc/hosts
-__etc_hosts_file_docker : /etc/hosts.docker
 __etc_hosts_version     : 1.0.0
 __etc_hosts_revision    : 22314
 
