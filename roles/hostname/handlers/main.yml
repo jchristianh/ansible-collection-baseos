@@ -29,6 +29,11 @@
     name  : rsyslog
     state : restarted
 
+- name: restart_syslog_debian_12
+  service:
+    name  : rsyslog
+    state : restarted
+
 - name: restart_syslog_fedora_35
   service:
     name  : rsyslog
