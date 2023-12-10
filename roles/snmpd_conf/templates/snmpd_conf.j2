@@ -22,7 +22,7 @@ group MyRWGroup v2c        readwrite
 group MyRWGroup usm        readwrite
 
 view all    included  .1                               80
-view system included  .iso.org.dod.internet.mgmt.mib-2.system
+# view system included  .iso.org.dod.internet.mgmt.mib-2.system
 
 # context sec.model sec.level match  read   write  notif
 access MyROSystem ""     any       noauth    exact  system none   none

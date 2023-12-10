@@ -8,8 +8,8 @@ __template_header : The Zen Garden
 
 
 __snmpd_conf_file        : /etc/snmp/snmpd.conf
-__snmpd_conf_version     : 1.0.0
-__snmpd_conf_revision    : 22404
+__snmpd_conf_version     : 1.0.1
+__snmpd_conf_revision    : 231210
 
 
 __snmp_pkg : net-snmp
