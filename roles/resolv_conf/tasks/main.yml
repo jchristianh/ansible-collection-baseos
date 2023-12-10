@@ -4,7 +4,8 @@
     __resolv_conf_file: "{{ __resolv_conf_file_docker }}"
   when:
     - ansible_virtualization_type == "docker" or
-        ansible_virtualization_type == "podman"
+        ansible_virtualization_type == "podman" or
+        ansible_virtualization_type == "container"
 
 
 - name: Deploy {{ __resolv_conf_file }}
