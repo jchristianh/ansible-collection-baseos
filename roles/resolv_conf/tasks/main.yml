@@ -1,15 +1,17 @@
 ---
 - name: Set resolv_conf_file if running in Docker
-  set_fact:
+  ansible.builtin.set_fact:
     __resolv_conf_file: "{{ __resolv_conf_file_docker }}"
-  when: ansible_virtualization_type == "docker"
+  when:
+    - ansible_virtualization_type == "docker" or
+        ansible_virtualization_type == "podman"
 
 
 - name: Deploy {{ __resolv_conf_file }}
-  template:
+  ansible.builtin.template:
     src: templates/resolv_conf.j2
     dest: "{{ __resolv_conf_file }}"
-    mode: 0644
+    mode: "0644"
 
 
 ...
