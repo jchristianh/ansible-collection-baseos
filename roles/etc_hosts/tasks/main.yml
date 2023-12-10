@@ -3,7 +3,9 @@
   set_fact:
     __etc_hosts_file: "{{ __etc_hosts_file }}.docker"
   when:
-    - ansible_virtualization_type == "docker"
+    - ansible_virtualization_type == "docker" or
+        ansible_virtualization_type == "podman" or
+        ansible_virtualization_type == "container"
 
 
 - name: Deploy {{ __etc_hosts_file }}
