@@ -4,6 +4,4 @@
     name : snmpd
     state: restarted
   when:
-    - ansible_virtualization_type == "docker" or
-        ansible_virtualization_type == "podman" or
-        ansible_virtualization_type == "container"
+    - ansible_virtualization_type | regex_search("docker|podman|container")
