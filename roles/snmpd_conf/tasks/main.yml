@@ -24,10 +24,6 @@
         path: /etc/snmp
         state: directory
 
-    - name: Debug ansible_virtualization_type
-      ansible.builtin.debug:
-        var: ansible_virtualization_type
-
     - name: Deploy snmpd.conf
       template:
         src: templates/snmpd_conf.j2
