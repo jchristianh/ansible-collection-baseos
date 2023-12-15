@@ -12,7 +12,7 @@
         file: __default_packages.yml
 
 
-- name: Install EPEL for CentOS hosts - Required for some of our packages
+- name: Install EPEL for CentOS hosts - Required for some packages
   package:
     name  : epel-release
     state : present
