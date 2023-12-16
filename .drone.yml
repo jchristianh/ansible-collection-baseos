@@ -1,0 +1,26 @@
+---
+kind: pipeline
+type: docker
+name: CentOS_9-Ansible-Pipeline
+
+trigger:
+  branch:
+    exclude:
+      - main
+  event: [push]
+
+steps:
+  - name: ansible_environment_verify
+    image: gitea.thezengarden.net/podman/ansible-dev/centos9:release
+    commands:
+      - . ./.drone.env
+      - env
+      - git log -1
+      - ansible --version
+      - ansible-lint --version
+
+  - name: ansible_lint
+    image: gitea.thezengarden.net/podman/ansible-dev/centos9:release
+    commands:
+      - . ./.drone.env
+      - ansible-lint --offline $ANSIBLE_LINT_EXCLUSION
