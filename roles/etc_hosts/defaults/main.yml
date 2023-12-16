@@ -1,15 +1,15 @@
 ---
-__project_author : Chris Hammer
-__project_email  : chris@thezengarden.net
-__project_repo   : https://github.com/jchristianh-ansible-collections/baseos
+etc_hosts_project_author : Chris Hammer
+etc_hosts_project_email  : chris@thezengarden.net
+etc_hosts_project_repo   : https://github.com/jchristianh-ansible-collections/baseos
 
 
-__template_header : The Zen Garden
+etc_hosts_template_header : The Zen Garden
 
 
-__etc_hosts_file        : /etc/hosts
-__etc_hosts_version     : 1.0.0
-__etc_hosts_revision    : 22314
+etc_hosts_etc_hosts_file     : /etc/hosts
+etc_hosts_etc_hosts_version  : 1.0.1
+etc_hosts_etc_hosts_revision : 231216
 
 
 ...

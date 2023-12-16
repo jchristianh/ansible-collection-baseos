@@ -1,11 +1,11 @@
 ###############################################
-# {{ __template_header }}
+# {{ etc_hosts_template_header }}
 ###############################################
 #
-# Configuration    : {{ __etc_hosts_file }}
-# Template Version : {{ __etc_hosts_version}}-{{ __etc_hosts_revision }}
+# Configuration    : {{ etc_hosts_etc_hosts_file }}
+# Template Version : {{ etc_hosts_etc_hosts_version }}-{{ etc_hosts_etc_hosts_revision }}
 #
-# {{ __project_author }} ({{ __project_email }})
+# {{ etc_hosts_project_author }} ({{ etc_hosts_project_email }})
 ###############################################
 
 
@@ -17,13 +17,13 @@
 
 # OUR PERSONAL INFO
 #############################################
-{{ ansible_default_ipv4.address | default('127.0.0.1') }}    {{ ansible_fqdn }}        {{ ansible_hostname }}     {{ inventory_hostname }}
+{{ ansible_default_ipv4.address | default('127.0.0.1') }} {{ ansible_fqdn }} {{ ansible_hostname }} {{ inventory_hostname }}
 
 
-{% if custom_hosts is defined and custom_hosts != '' %}
+{% if etc_hosts_custom_hosts is defined and etc_hosts_custom_hosts != '' %}
 # CUSTOM HOSTS:
 #############################################
-{% for item in custom_hosts %}
+{% for item in etc_hosts_custom_hosts %}
 {{ item }}
 {% endfor %}
 {% endif %}
