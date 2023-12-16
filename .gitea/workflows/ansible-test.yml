@@ -27,4 +27,4 @@ jobs:
       - name: Run Ansible-Lint
         run: |
           . ./.drone.env
-          ansible-lint --offline $ANSIBLE_LINT_EXCLUSION
+          ansible-lint --offline --nocolor $ANSIBLE_LINT_EXCLUSION
