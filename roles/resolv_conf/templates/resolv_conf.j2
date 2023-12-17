@@ -1,15 +1,15 @@
-# {{ __template_header }}
+# {{ resolv_conf_template_header }}
 ###############################################
 #
-# Configuration    : {{ __resolv_conf_file }}
-# Template Version : {{ __resolv_conf_version}}-{{ __resolv_conf_revision }}
+# Configuration    : {{ resolv_conf_resolv_conf_file }}
+# Template Version : {{ __resolv_confresolv_conf_resolv_conf_version_version}}-{{ resolv_conf_resolv_conf_revision }}
 #
-# {{ __project_author }} ({{ __project_email }})
+# {{ resolv_conf_project_author }} ({{ resolv_conf_project_email }})
 ###############################################
 
 
-search {{ __search_domain }}
-{% for item in __nameservers %}
+search {{ resolv_conf_search_domain }}
+{% for item in resolv_conf_nameservers %}
 nameserver {{ item }}
 {% endfor %}
 
