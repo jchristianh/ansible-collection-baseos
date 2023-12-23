@@ -1,11 +1,11 @@
 ###############################################
-# {{ __template_header }}
+# {{ snmpd_conf_template_header }}
 ###############################################
 #
-# Configuration    : {{ __snmpd_conf_file }}
-# Template Version : {{ __snmpd_conf_version}}-{{ __snmpd_conf_revision }}
+# Configuration    : {{ snmpd_conf_snmpd_conf_file }}
+# Template Version : {{ snmpd_conf_snmpd_conf_version }}-{{ snmpd_conf_snmpd_conf_revision }}
 #
-# {{ __project_author }} ({{ __project_email }})
+# {{ snmpd_conf_project_author }} ({{ snmpd_conf_project_email }})
 ###############################################
 
 
@@ -33,6 +33,6 @@ access MyRWGroup ""      any       noauth    exact  all    all    none
 ###############################################################################
 # System contact information
 #
-syslocation {{ __snmpd_location }}
-syscontact {{ __snmpd_contact_name }} {{ __snmpd_contact_email }}
+syslocation {{ snmpd_conf_snmpd_location }}
+syscontact {{ snmpd_conf_snmpd_contact_name }} {{ snmpd_conf_snmpd_contact_email }}
 # -----------------------------------------------------------------------------
