@@ -1,16 +1,5 @@
 ---
-__project_author : Chris Hammer
-__project_email  : chris@thezengarden.net
-__project_repo   : https://github.com/jchristianh-ansible-collections/baseos
-
-
-__template_header : The Zen Garden
-
-
-__motd_file        : /etc/motd
-__motd_file_docker : /etc/motd
-__motd_version     : 1.0.0
-__motd_revision    : 22318
+motd_motd_file        : /etc/motd
 
 
 ...
