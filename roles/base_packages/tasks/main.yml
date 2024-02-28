@@ -2,18 +2,18 @@
 - name: Include distribution specific variables or include defaults
   block:
     - name: Include distribution specific variables
-      include_vars:
+      ansible.builtin.include_vars:
         file: "{{ ansible_distribution | lower }}_{{ ansible_distribution_major_version }}.yml"
 
 
   rescue:
     - name: Non-supported distribution; using default package set
-      include_vars:
-        file: __default_packages.yml
+      ansible.builtin.include_vars:
+        file: default_packages.yml
 
 
-- name: Install EPEL for CentOS hosts - Required for some of our packages
-  package:
+- name: Install EPEL for CentOS hosts - Required for some packages
+  ansible.builtin.package:
     name  : epel-release
     state : present
   when:
@@ -21,8 +21,8 @@
 
 
 - name: Install package set
-  package:
-    name  : "{{ __base_packages }}"
+  ansible.builtin.package:
+    name  : "{{ base_packages_package_set }}"
     state : present
 
 

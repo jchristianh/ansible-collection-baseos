@@ -1,23 +1,23 @@
 ---
-__project_author : Chris Hammer
-__project_email  : chris@thezengarden.net
-__project_repo   : https://github.com/jchristianh-ansible-collections/baseos
+snmpd_conf_project_author : Chris Hammer
+snmpd_conf_project_email  : chris@thezengarden.net
+snmpd_conf_project_repo   : https://github.com/jchristianh-ansible-collections/baseos
 
 
-__template_header : The Zen Garden
+snmpd_conf_template_header : The Zen Garden
 
 
-__snmpd_conf_file        : /etc/snmp/snmpd.conf
-__snmpd_conf_version     : 1.0.1
-__snmpd_conf_revision    : 231210
+snmpd_conf_snmpd_conf_file     : /etc/snmp/snmpd.conf
+snmpd_conf_snmpd_conf_version  : 1.0.1
+snmpd_conf_snmpd_conf_revision : 231210
 
 
-__snmp_pkg : net-snmp
+snmpd_conf_snmp_pkg : net-snmp
 
 
-__snmpd_location      : 'Newport News, VA'
-__snmpd_contact_name  : 'Chris Hammer'
-__snmpd_contact_email : '<chris@thezengarden.net>'
+snmpd_conf_snmpd_location      : 'Newport News, VA'
+snmpd_conf_snmpd_contact_name  : 'Chris Hammer'
+snmpd_conf_snmpd_contact_email : '<chris@thezengarden.net>'
 
 
 ...

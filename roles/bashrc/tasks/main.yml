@@ -1,9 +1,9 @@
 ---
 - name: Deploy .bashrc
-  copy:
+  ansible.builtin.copy:
     src  : files/bashrc
     dest : /root/.bashrc
-    mode : 0640
+    mode : "0640"
 
 
 ...

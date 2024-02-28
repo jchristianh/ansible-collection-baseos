@@ -5,7 +5,7 @@
 # Please adjust accordingly, or include a vars file matching the pattern:
 # <ansible_distribution>_<ansible_distribution_major_version>.yml
 
-__base_packages:
+base_packages_package_set:
   - bc
   - bzip2
   - file

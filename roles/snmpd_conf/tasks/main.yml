@@ -1,40 +1,35 @@
 ---
-- name: Include distribution specific variables or include defaults
-  block:
-    - name: Include distribution specific variables
-      include_vars:
-        file: "{{ ansible_distribution | lower }}_{{ ansible_distribution_major_version }}.yml"
-
-
-  rescue:
-    - name: Non-supported distribution; using default package set
-      include_vars:
-        file: __default_packages.yml
-
-
 - name: Deploy and configure SNMP
   block:
+    - name: Set package name for Debian 12
+      ansible.builtin.set_fact:
+        snmpd_conf_snmp_pkg: snmpd
+      when:
+        - ansible_distribution | lower == 'debian'
+        - ansible_distribution_major_version == '12'
+
     - name: Install SNMP
-      package:
-        name: "{{ __snmp_pkg }}"
+      ansible.builtin.package:
+        name: "{{ snmpd_conf_snmp_pkg }}"
         state: present
 
     - name: Ensure /etc/snmp directory is present
-      file:
+      ansible.builtin.file:
         path: /etc/snmp
         state: directory
+        mode: "0755"
 
     - name: Deploy snmpd.conf
-      template:
+      ansible.builtin.template:
         src: templates/snmpd_conf.j2
-        dest: "{{ __snmpd_conf_file }}"
-        mode: 0644
+        dest: "{{ snmpd_conf_snmpd_conf_file }}"
+        mode: "0644"
       notify: Restart_SNMPd
 
 
   rescue:
     - name: Unable to deploy SNMP
-      debug:
+      ansible.builtin.debug:
         msg: "Unable to deploy SNMP to {{ inventory_hostname }}."
 
 

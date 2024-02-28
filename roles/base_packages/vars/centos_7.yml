@@ -1,5 +1,5 @@
 ---
-__base_packages:
+base_packages_package_set:
   - bc
   - bind-utils
   - bzip2

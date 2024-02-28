@@ -1,16 +1,16 @@
 ---
-- name: Set etc_hosts_file if running in Docker
-  set_fact:
-    __etc_hosts_file: "{{ __etc_hosts_file }}.docker"
+- name: Set etc_hosts_etc_hosts_file if running in Docker
+  ansible.builtin.set_fact:
+    etc_hosts_etc_hosts_file: "{{ etc_hosts_etc_hosts_file }}.docker"
   when:
     - ansible_virtualization_type | regex_search("docker|podman|container")
 
 
-- name: Deploy {{ __etc_hosts_file }}
-  template:
+- name: Deploy {{ etc_hosts_etc_hosts_file }}
+  ansible.builtin.template:
     src: templates/etc_hosts.j2
-    dest: "{{ __etc_hosts_file }}"
-    mode: 0644
+    dest: "{{ etc_hosts_etc_hosts_file }}"
+    mode: "0644"
 
 
 ...

@@ -1,20 +1,19 @@
 ---
-__project_author : Chris Hammer
-__project_email  : chris@thezengarden.net
-__project_repo   : https://github.com/jchristianh-ansible-collections/baseos
+resolv_conf_project_author : Chris Hammer
+resolv_conf_project_email  : chris@thezengarden.net
+resolv_conf_project_repo   : https://github.com/jchristianh-ansible-collections/baseos
 
 
-__template_header : The Zen Garden
+resolv_conf_template_header : The Zen Garden
 
 
-__resolv_conf_file        : /etc/resolv.conf
-__resolv_conf_file_docker : /etc/resolv.conf.docker
-__resolv_conf_version     : 1.0.1
-__resolv_conf_revision    : 221007
+resolv_conf_resolv_conf_file        : /etc/resolv.conf
+resolv_conf_resolv_conf_version     : 1.0.1
+resolv_conf_resolv_conf_revision    : 221007
 
 
-__search_domain : thezengarden.net
-__nameservers   :
+resolv_conf_search_domain : thezengarden.net
+resolv_conf_nameservers   :
   - 10.10.10.55
   - 10.1.1.15
 

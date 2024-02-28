@@ -1,0 +1,14 @@
+---
+- name: Test the role provided in extra_vars
+  hosts: all
+  become: false
+  gather_facts: true
+
+
+  tasks:
+    - name: Include role to test
+      ansible.builtin.include_role:
+        name: "{{ __test_role | default('testing') }}"
+
+
+...
