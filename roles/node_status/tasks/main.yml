@@ -30,3 +30,5 @@
         group     : "{{ node_status_group }}"
       delegate_to : "{{ node_status_host }}"
       throttle    : 1
+      loop_control:
+        loop_var  : node_status_log_loop
