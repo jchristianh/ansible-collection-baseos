@@ -29,4 +29,4 @@
         owner     : "{{ node_status_user }}"
         group     : "{{ node_status_group }}"
       delegate_to : "{{ node_status_host }}"
-      loop: "{{ range(0, node_status_count) | list }}"
+      throttle    : 1
