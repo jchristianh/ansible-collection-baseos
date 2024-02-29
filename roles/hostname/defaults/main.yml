@@ -1,0 +1,13 @@
+---
+hostname_project_author : Chris Hammer
+hostname_project_email  : chris@thezengarden.net
+hostname_project_repo   : https://github.com/jchristianh-ansible-collections/baseos
+
+hostname_template_header : The Zen Garden
+
+hostname_hostname_file        : /etc/hostname
+hostname_hostname_version     : 1.0.0
+hostname_hostname_revision    : 240228
+
+
+...
