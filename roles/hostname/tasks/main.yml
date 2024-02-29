@@ -9,32 +9,8 @@
         - "Restart_syslog_{{ ansible_distribution | lower }}_{{ ansible_distribution_major_version }}"
 
   rescue:
-    - name: Ensure hostname package is present
-      ansible.builtin.package:
-        name: hostname
-        state: present
-
-    - name: Set hostname file if running in container
-      ansible.builtin.set_fact:
-        hostname_hostname_file: "{{ hostname_hostname_file }}.container"
-      when:
-        - ansible_virtualization_type | regex_search("docker|podman|container")
-
-    - name: Add entry into hostname file
-      ansible.builtin.lineinfile:
-        path: "{{ hostname_hostname_file }}"
-        line: "{{ inventory_hostname }}"
-        state: present
-        create: true
-        mode: '0644'
-
-    - name: Update hostname from /etc/hostname
-      ansible.builtin.command:
-        cmd: "hostname -F {{ hostname_hostname_file }}"
-      notify:
-        - "Restart_syslog_{{ ansible_distribution | lower }}_{{ ansible_distribution_major_version }}"
-      when:
-        - not ansible_virtualization_type | regex_search("docker|podman|container")
-
+    - name: Unable to set hostname
+      ansible.builtin.debug:
+        msg: "Unable to set hostname for {{ ansible_hostname }} to {{ inventory_hostname }}."
 
 ...
