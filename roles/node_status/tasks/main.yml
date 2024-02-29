@@ -1,2 +1,32 @@
 ---
-# tasks file for node_status
+- name: Update node status when not running in a container
+  when: not ansible_virtualization_type | regex_search("docker|podman|container")
+  block:
+    - name: Create directory {{ node_status_dir }}
+      ansible.builtin.file:
+        path      : "{{ node_status_dir }}"
+        state     : directory
+        mode      : '0755'
+      become      : false
+      run_once    : true
+      delegate_to : "{{ node_status_host }}"
+
+
+    - name: Capture system uptime
+      ansible.builtin.command  : uptime
+      register : r_node_status_uptime
+      changed_when: false
+
+
+    - name: Log node status
+      ansible.builtin.lineinfile:
+        path      : "{{ node_status_dir }}/{{ node_status_file }}"
+        state     : present
+        regexp    : "{{ inventory_hostname }}"
+        line      : "{{ ansible_date_time.epoch }},,{{ inventory_hostname }},,{{ ansible_distribution }} {{ ansible_distribution_version }},,{{ r_node_status_uptime.stdout }}"
+        create    : true
+        mode      : '0644'
+        owner     : "{{ node_status_user }}"
+        group     : "{{ node_status_group }}"
+      delegate_to : "{{ node_status_host }}"
+      loop: "{{ range(0, node_status_count) | list }}"

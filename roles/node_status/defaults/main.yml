@@ -1,2 +1,7 @@
 ---
-# defaults file for node_status
+node_status_host  : zg-lxut02.thezengarden.net
+node_status_user  : chris
+node_status_group : chris
+node_status_dir   : /home/chris/node_status
+node_status_file  : status.csv
+node_status_count : 3
