@@ -14,11 +14,11 @@
                   |___/
 
 
-Host     : {{ ansible_fqdn }}
-IP       : {{ host_ip }}
+Host     : {{ inventory_hostname }}
+IP       : {{ motd_host_ip }}
 CPU      : {{ ansible_processor_vcpus }} x {{ ansible_processor[2] }}
 Memory   : {{ "{0:0.2f}".format(ansible_memfree_mb/1024) }} GB free of {{ (ansible_memtotal_mb/1024)|round}} GB
 Platform : {{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_kernel }}
-Up       : {{ node_uptime.stdout }}
+Up       : {{ uptime_formatted }}
 
 

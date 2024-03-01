@@ -1,20 +1,16 @@
 ---
-- name: Set host IP address or set a default
+- name: Format uptime containing days
   ansible.builtin.set_fact:
-    host_ip : "{{ ansible_default_ipv4.address | default('127.0.0.1') }}"
+    uptime_formatted: "{{ motd_host_uptime | regex_replace(motd_day_filter, '\\1 \\2 hours \\3 minutes') }}"
+  when:
+    - "'day' in motd_host_uptime"
 
 
-- name: Install Perl if needed
-  ansible.builtin.package:
-    name  : perl
-    state : present
-
-
-- name: Get system uptime from script
-  ansible.builtin.script:
-    cmd        : "scripts/get_uptime.pl {{ ansible_uptime_seconds }}"
-  register     : node_uptime
-  changed_when : false
+- name: Format uptime not containing days
+  ansible.builtin.set_fact:
+    uptime_formatted: "{{ motd_host_uptime | regex_replace(motd_nonday_filter, '\\1 hours \\2 minutes \\3 seconds') }}"
+  when:
+    - "'day' not in motd_host_uptime"
 
 
 - name: Update MOTD
@@ -26,4 +22,3 @@
 
 
 ...
-
