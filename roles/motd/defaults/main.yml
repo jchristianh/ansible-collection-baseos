@@ -1,5 +1,11 @@
 ---
-motd_motd_file        : /etc/motd
+motd_motd_file: /etc/motd
+
+motd_host_ip       : "{{ ansible_default_ipv4.address | default('127.0.0.1') }}"
+motd_host_uptime   : "{{ now().replace(microsecond=0) - now().fromtimestamp(now(fmt='%s') | int - ansible_uptime_seconds) }}"
+
+motd_day_filter    : "(.* day[s]?),\\s+(\\d+):(\\d+):(\\d+)"
+motd_nonday_filter : "(\\d+):(\\d+):(\\d+)"
 
 
 ...
