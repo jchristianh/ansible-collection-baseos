@@ -1,6 +1,8 @@
 ---
 
 - name: Use hostname module to set hostname, or failback to command module
+  when:
+    - not ansible_virtualization_type | regex_search("docker|podman|container")
   block:
     - name: Set hostname for host using hostname module
       ansible.builtin.hostname:
