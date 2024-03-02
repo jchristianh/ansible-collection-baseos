@@ -7,5 +7,7 @@ motd_host_uptime   : "{{ now().replace(microsecond=0) - now().fromtimestamp(now(
 motd_day_filter    : "(.* day[s]?),\\s+(\\d+):(\\d+):(\\d+)"
 motd_nonday_filter : "(\\d+):(\\d+):(\\d+)"
 
+motd_day_filter_repl    : "\\1 \\2 hours \\3 minutes"
+motd_nonday_filter_repl : "\\1 hours \\2 minutes \\3 seconds"
 
 ...
