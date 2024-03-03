@@ -1,0 +1,16 @@
+---
+dnf_conf_maintainer       : "Chris H."
+dnf_conf_maintainer_email : "<chris@thezengarden.net>"
+
+dnf_conf_file     : "/etc/dnf/dnf.conf"
+dnf_conf_version  : 1.0
+dnf_conf_revision : 2433621
+
+dnf_conf_fastest_mirror : "False"
+dnf_conf_gpg_check      : "1"
+
+dnf_conf_max_downloads  : 20
+
+
+
+...

@@ -1,0 +1,9 @@
+---
+- name: Deploy {{ dnf_conf_file }}
+  ansible.builtin.template:
+    src: templates/dnf_conf.j2
+    dest: "{{ dnf_conf_file }}"
+    mode: "0644"
+
+
+...

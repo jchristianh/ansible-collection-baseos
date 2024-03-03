@@ -1,0 +1,19 @@
+##########################
+# The Zen Garden Network #
+##########################
+#
+# Configuration    : {{ dnf_conf_file }}
+# Template Version : {{ dnf_conf_version}}-{{ dnf_conf_revision }}
+#
+# {{ dnf_conf_maintainer }} {{ dnf_conf_maintainer_email }}
+###############################################
+
+
+[main]
+gpgcheck={{ dnf_conf_gpg_check }}
+installonly_limit=3
+clean_requirements_on_remove=True
+best=True
+skip_if_unavailable=False
+max_parallel_downloads={{ dnf_conf_max_downloads }}
+fastestmirror={{ dnf_conf_fastest_mirror }}
