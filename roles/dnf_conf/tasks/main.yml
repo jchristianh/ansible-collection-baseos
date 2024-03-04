@@ -4,6 +4,8 @@
     src: templates/dnf_conf.j2
     dest: "{{ dnf_conf_file }}"
     mode: "0644"
+  when:
+    - "'dnf' in ansible_pkg_mgr"
 
 
 ...
