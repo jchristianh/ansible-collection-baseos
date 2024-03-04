@@ -1,16 +1,12 @@
 ---
-- name: Format uptime containing days
+- name: Format uptime using Jinja
   ansible.builtin.set_fact:
-    uptime_formatted: "{{ motd_host_uptime | regex_replace(motd_day_filter, motd_day_filter_repl) }}"
-  when:
-    - "'day' in motd_host_uptime"
-
-
-- name: Format uptime not containing days
-  ansible.builtin.set_fact:
-    uptime_formatted: "{{ motd_host_uptime | regex_replace(motd_nonday_filter, motd_nonday_filter_repl) }}"
-  when:
-    - "'day' not in motd_host_uptime"
+    uptime_formatted: |
+      {% if 'day' in motd_host_uptime %}
+        {{ motd_host_uptime | regex_replace(motd_day_filter, motd_day_filter_repl) }}
+      {% else %}
+        {{ motd_host_uptime | regex_replace(motd_nonday_filter, motd_nonday_filter_repl) }}
+      {% endif %}
 
 
 - name: Update MOTD
