@@ -16,7 +16,7 @@
 
 Host     : {{ inventory_hostname }}
 IP       : {{ motd_host_ip }}
-CPU      : {{ ansible_processor_vcpus }} x {{ ansible_processor[2] }}
+CPU      : {{ ansible_processor_vcpus }} x {{ ansible_processor[2] | regex_replace('\\s+', ' ') }}
 Memory   : {{ "{0:0.2f}".format(ansible_memfree_mb/1024) }} GB free of {{ (ansible_memtotal_mb/1024)|round}} GB
 Platform : {{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_kernel }}
 Up       : {{ uptime_formatted | trim }}
