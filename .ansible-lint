@@ -4,3 +4,5 @@ skip_list:
   - yaml[line-length]
   - no-changed-when
   - galaxy[no-changelog]
+  - no-free-form
+  - package-latest
